@@ -3,11 +3,12 @@ Ext.onReady(function(){
     name: 'HelloExt',
     launch: function() {
         Ext.create('Ext.container.Viewport', {
+            title: 'Answer Quest',
             layout: 'fit',
             items: [
                 {
-                    xtype: 'aq-main',
-                    id: 'aq-main'
+                    xtype: 'aq-editquest',
+                    id: 'aq-editquest'
                 }
             ]
         });
@@ -21,8 +22,8 @@ Ext.define('AQ.Main', {
     alias: 'widget.aq-main',
     layout: 'card',
     items: [
-        {xtype: 'aq-startpage'},
-        {xtype: 'aq-editquest'   }
+        {xtype: 'aq-startpage', id: 'aq-startpage'},
+        {xtype: 'aq-editquest', id: 'aq-editquest'}
     ],
     onRender: function() {
         this.callParent(arguments); // call the superclass onRender method
@@ -32,13 +33,7 @@ Ext.define('AQ.Main', {
 });
 
 
-Ext.define('AQ.EditQuest', {
-    extend: 'Ext.Panel',
-    alias: 'widget.aq-editquest',
-    layout: 'vbox',
-    html: 'test new page'
 
-});
 
 
 
